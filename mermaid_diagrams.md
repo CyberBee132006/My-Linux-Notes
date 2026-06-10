@@ -175,118 +175,22 @@ flowchart TD
 
 **Shape Syntax Reference:**
 
-|
- Shape 
-|
- Syntax 
-|
- Typical Use 
-|
-|
--------
-|
---------
-|
--------------
-|
-|
- Rectangle 
-|
-`[Label]`
-|
- Process step 
-|
-|
- Rounded Rectangle 
-|
-`(Label)`
-|
- Subprocess 
-|
-|
- Stadium/Pill 
-|
-`([Label])`
-|
- Start / End terminal 
-|
-|
- Subroutine 
-|
-`[[Label]]`
-|
- Predefined process 
-|
-|
- Cylinder 
-|
-`[(Label)]`
-|
- Database 
-|
-|
- Circle 
-|
-`((Label))`
-|
- Connector / Junction 
-|
-|
- Asymmetric 
-|
-`>Label]`
-|
- Input tag 
-|
-|
- Diamond 
-|
-`{Label}`
-|
- Decision / If-else 
-|
-|
- Hexagon 
-|
-`{{Label}}`
-|
- Preparation / Condition 
-|
-|
- Parallelogram 
-|
-`[/Label/]`
-|
- Input / Output 
-|
-|
- Reverse Parallelogram 
-|
-`[\Label\]`
-|
- Output 
-|
-|
- Trapezoid 
-|
-`[/Label\]`
-|
- Manual input 
-|
-|
- Reverse Trapezoid 
-|
-`[\Label/]`
-|
- Manual operation 
-|
-|
- Double circle 
-|
-`(((Label)))`
-|
- On-page connector 
-|
+| Shape | Syntax | Typical Use |
+|-------|--------|-------------|
+| Rectangle | `[Label]` | Process step |
+| Rounded Rectangle | `(Label)` | Subprocess |
+| Stadium/Pill | `([Label])` | Start / End terminal |
+| Subroutine | `[[Label]]` | Predefined process |
+| Cylinder | `[(Label)]` | Database |
+| Circle | `((Label))` | Connector / Junction |
+| Asymmetric | `>Label]` | Input tag |
+| Diamond | `{Label}` | Decision / If-else |
+| Hexagon | `{{Label}}` | Preparation / Condition |
+| Parallelogram | `[/Label/]` | Input / Output |
+| Reverse Parallelogram | `[\Label\]` | Output |
+| Trapezoid | `[/Label\]` | Manual input |
+| Reverse Trapezoid | `[\Label/]` | Manual operation |
+| Double circle | `(((Label)))` | On-page connector |
 
 > ⚠️ **WARNING:** Node IDs and labels are different things. In `A[My Label]`, `A` is the ID used in your code to make connections, and `My Label` is what appears on screen. IDs must be **unique** within the diagram. If you reuse an ID, Mermaid treats it as the same node.
 
@@ -306,88 +210,27 @@ flowchart LR
     O == Label ==> P
     Q --o R
     S --x T
-    U  V
     W o--o X
     Y x--x Z
 ```
 
 **Edge Syntax Reference:**
 
-|
- Syntax 
-|
- Result 
-|
-|
---------
-|
---------
-|
-|
-`-->`
-|
- Arrow (solid) 
-|
-|
-`---`
-|
- Line (no arrow) 
-|
-|
-`-->|text|`
-|
- Arrow with label 
-|
-|
-`-- text -->`
-|
- Arrow with label (alternative) 
-|
-|
-`-.->`
-|
- Dotted arrow 
-|
-|
-`-. text .->`
-|
- Dotted arrow with label 
-|
-|
-`==>`
-|
- Thick arrow 
-|
-|
-`== text ==>`
-|
- Thick arrow with label 
-|
-|
-`--o`
-|
- Circle endpoint 
-|
-|
-`--x`
-|
- Cross/X endpoint 
-|
-|
-`<-->`
-|
- Bidirectional arrow 
-|
-|
-`o--o`
-|
- Circle on both ends 
-|
-|
-`x--x`
-|
- Cross on both ends 
-|
+| Syntax | Result |
+|--------|--------|
+| `-->` | Arrow (solid) |
+| `---` | Line (no arrow) |
+| `-->|text|` | Arrow with label |
+| `-- text -->` | Arrow with label (alternative) |
+| `-.->` | Dotted arrow |
+| `-. text .->` | Dotted arrow with label |
+| `==>` | Thick arrow |
+| `== text ==>` | Thick arrow with label |
+| `--o` | Circle endpoint |
+| `--x` | Cross/X endpoint |
+| `<-->` | Bidirectional arrow |
+| `o--o` | Circle on both ends |
+| `x--x` | Cross on both ends |
 
 > ⚠️ **WARNING:** When adding a **text label on an arrow**, the two syntaxes are:
 > - `A -->|label text| B` — pipes wrap the label
@@ -480,8 +323,8 @@ You can use HTML inside node labels (in renderers that allow it):
 
 ```mermaid
 flowchart LR
-    A["Bold TitleSubtitle text"]
-    B["Line 1Line 2Line 3"]
+    A["<b>Bold Title</b><br/>Subtitle text"]
+    B["Line 1<br/>Line 2<br/>Line 3"]
 ```
 
 > ⚠️ **WARNING:** HTML in node labels only works when the renderer has `htmlLabels` enabled (GitHub enables this). Not all Mermaid environments support it. Use `<br/>` not `<br>` for line breaks inside labels.
@@ -526,76 +369,16 @@ sequenceDiagram
 
 ### Message Types (Arrows)
 
-|
- Syntax 
-|
- Arrow Type 
-|
- Meaning 
-|
-|
---------
-|
------------
-|
----------
-|
-|
-`->>`
-|
- Solid arrow 
-|
- Synchronous call 
-|
-|
-`-->>`
-|
- Dashed arrow 
-|
- Response / async return 
-|
-|
-`->`
-|
- Solid open arrow 
-|
- Message (no arrowhead) 
-|
-|
-`-->`
-|
- Dashed open arrow 
-|
- Async message 
-|
-|
-`-x`
-|
- Solid with X 
-|
- Failed message 
-|
-|
-`--x`
-|
- Dashed with X 
-|
- Failed async 
-|
-|
-`-)`
-|
- Solid async 
-|
- Fire and forget 
-|
-|
-`--)`
-|
- Dashed async 
-|
- Async no response 
-|
+| Syntax | Arrow Type | Meaning |
+|--------|-----------|---------|
+| `->>` | Solid arrow | Synchronous call |
+| `-->>` | Dashed arrow | Response / async return |
+| `->` | Solid open arrow | Message (no arrowhead) |
+| `-->` | Dashed open arrow | Async message |
+| `-x` | Solid with X | Failed message |
+| `--x` | Dashed with X | Failed async |
+| `-)` | Solid async | Fire and forget |
+| `--)` | Dashed async | Async no response |
 
 ```mermaid
 sequenceDiagram
@@ -739,36 +522,12 @@ classDiagram
 
 ### Visibility Modifiers
 
-|
- Symbol 
-|
- Meaning 
-|
-|
---------
-|
----------
-|
-|
-`+`
-|
- Public 
-|
-|
-`-`
-|
- Private 
-|
-|
-`#`
-|
- Protected 
-|
-|
-`~`
-|
- Package/Internal 
-|
+| Symbol | Meaning |
+|--------|---------|
+| `+` | Public |
+| `-` | Private |
+| `#` | Protected |
+| `~` | Package/Internal |
 
 ---
 
@@ -776,7 +535,7 @@ classDiagram
 
 ```mermaid
 classDiagram
-    Animal  Person : Association
+    Animal --> Person : Association
     Person ..> License : Dependency
     Duck ..|> Flyable : Realization
     Dog -- Cat : Link (plain)
@@ -784,69 +543,15 @@ classDiagram
 
 **Relationship Types:**
 
-|
- Syntax 
-|
- Arrow 
-|
- Meaning 
-|
-|
---------
-|
--------
-|
----------
-|
-|
-`<|--`
-|
- Triangle 
-|
- Inheritance (extends) 
-|
-|
-`*--`
-|
- Filled diamond 
-|
- Composition (owns) 
-|
-|
-`o--`
-|
- Empty diamond 
-|
- Aggregation (has-a) 
-|
-|
-`-->`
-|
- Arrow 
-|
- Association 
-|
-|
-`..>`
-|
- Dashed arrow 
-|
- Dependency 
-|
-|
-`..|>`
-|
- Dashed triangle 
-|
- Realization (implements) 
-|
-|
-`--`
-|
- Line 
-|
- Link (plain, no semantics) 
-|
+| Syntax | Arrow | Meaning |
+|--------|-------|---------|
+| `<|--` | Triangle | Inheritance (extends) |
+| `*--` | Filled diamond | Composition (owns) |
+| `o--` | Empty diamond | Aggregation (has-a) |
+| `-->` | Arrow | Association |
+| `..>` | Dashed arrow | Dependency |
+| `..|>` | Dashed triangle | Realization (implements) |
+| `--` | Line | Link (plain, no semantics) |
 
 > ⚠️ **WARNING:** The **direction of the arrow matters**. `A <|-- B` means B inherits from A (B is a child of A). `A --|> B` is the reverse. Get this backwards and your class diagram conveys the opposite meaning.
 
@@ -874,15 +579,15 @@ Common cardinality values:
 ```mermaid
 classDiagram
     class Flyable {
-        <>
+        <<interface>>
         +fly() void
     }
     class Shape {
-        <>
+        <<abstract>>
         +area() float
     }
     class Enum {
-        <>
+        <<enumeration>>
         RED
         GREEN
         BLUE
@@ -998,7 +703,7 @@ stateDiagram-v2
 stateDiagram-v2
     [*] --> CheckAge
 
-    state CheckAge <>
+    state CheckAge <<choice>>
     CheckAge --> Adult : age >= 18
     CheckAge --> Minor : age < 18
     Adult --> [*]
@@ -1082,36 +787,12 @@ Relationships are defined as:
 EntityA cardinality--cardinality EntityB : "relationship label"
 ```
 
-|
- Cardinality Symbol 
-|
- Meaning 
-|
-|
--------------------
-|
----------
-|
-|
-`\|o`
-|
- Zero or one 
-|
-|
-`\|\|`
-|
- Exactly one 
-|
-|
-`o{`
-|
- Zero or many 
-|
-|
-`\|{`
-|
- One or many 
-|
+| Cardinality Symbol | Meaning |
+|-------------------|---------|
+| `\|o` | Zero or one |
+| `\|\|` | Exactly one |
+| `o{` | Zero or many |
+| `\|{` | One or many |
 
 ```mermaid
 erDiagram
@@ -1158,48 +839,12 @@ gantt
 
 ### Task Status Keywords
 
-|
- Keyword 
-|
- Meaning 
-|
- Visual 
-|
-|
----------
-|
----------
-|
---------
-|
-|
-`done`
-|
- Completed task 
-|
- Gray/filled 
-|
-|
-`active`
-|
- Currently in progress 
-|
- Blue/highlighted 
-|
-|
-`crit`
-|
- Critical path task 
-|
- Red 
-|
-|
-`milestone`
-|
- A single point in time 
-|
- Diamond marker 
-|
+| Keyword | Meaning | Visual |
+|---------|---------|--------|
+| `done` | Completed task | Gray/filled |
+| `active` | Currently in progress | Blue/highlighted |
+| `crit` | Critical path task | Red |
+| `milestone` | A single point in time | Diamond marker |
 
 > ⚠️ **WARNING:** Keywords like `done`, `active`, `crit` must come **before the task ID** in the syntax: `:done, taskID, startDate, endDate`. Putting them after the ID will cause a parse error.
 
@@ -1389,41 +1034,13 @@ gitGraph
 
 ### Commands Reference
 
-|
- Command 
-|
- Effect 
-|
-|
----------
-|
---------
-|
-|
-`commit`
-|
- Add a commit on current branch 
-|
-|
-`branch name`
-|
- Create a new branch 
-|
-|
-`checkout name`
-|
- Switch to a branch 
-|
-|
-`merge name`
-|
- Merge named branch into current 
-|
-|
-`cherry-pick id: "X"`
-|
- Cherry-pick commit by ID 
-|
+| Command | Effect |
+|---------|--------|
+| `commit` | Add a commit on current branch |
+| `branch name` | Create a new branch |
+| `checkout name` | Switch to a branch |
+| `merge name` | Merge named branch into current |
+| `cherry-pick id: "X"` | Cherry-pick commit by ID |
 
 **Commit options:**
 - `id: "My message"` — label the commit
@@ -1495,51 +1112,15 @@ mindmap
 
 ### Node Shapes in Mindmap
 
-|
- Syntax 
-|
- Shape 
-|
-|
---------
-|
--------
-|
-|
-`root((text))`
-|
- Circle 
-|
-|
-`node[text]`
-|
- Rectangle 
-|
-|
-`node(text)`
-|
- Rounded rectangle 
-|
-|
-`node{{text}}`
-|
- Hexagon 
-|
-|
-`node>text]`
-|
- Asymmetric (flag) 
-|
-|
-`node)text(`
-|
- Cloud/Explosion 
-|
-|
-`node((text))`
-|
- Circle 
-|
+| Syntax | Shape |
+|--------|-------|
+| `root((text))` | Circle |
+| `node[text]` | Rectangle |
+| `node(text)` | Rounded rectangle |
+| `node{{text}}` | Hexagon |
+| `node>text]` | Asymmetric (flag) |
+| `node)text(` | Cloud/Explosion |
+| `node((text))` | Circle |
 
 > ⚠️ **WARNING:** Mindmap uses **indentation to define hierarchy** — not arrow syntax. The number of leading spaces determines the level. Be consistent: use 4 spaces per indent level, or 2 spaces — do not mix.
 
@@ -1831,56 +1412,16 @@ flowchart TD
 
 **Common theme variables:**
 
-|
- Variable 
-|
- Controls 
-|
-|
-----------
-|
-----------
-|
-|
-`primaryColor`
-|
- Main node fill color 
-|
-|
-`primaryTextColor`
-|
- Text inside nodes 
-|
-|
-`primaryBorderColor`
-|
- Node border color 
-|
-|
-`lineColor`
-|
- Arrow/edge color 
-|
-|
-`secondaryColor`
-|
- Secondary node fill 
-|
-|
-`tertiaryColor`
-|
- Tertiary node fill 
-|
-|
-`background`
-|
- Diagram background 
-|
-|
-`fontSize`
-|
- Base font size 
-|
+| Variable | Controls |
+|----------|----------|
+| `primaryColor` | Main node fill color |
+| `primaryTextColor` | Text inside nodes |
+| `primaryBorderColor` | Node border color |
+| `lineColor` | Arrow/edge color |
+| `secondaryColor` | Secondary node fill |
+| `tertiaryColor` | Tertiary node fill |
+| `background` | Diagram background |
+| `fontSize` | Base font size |
 
 ---
 
@@ -1971,7 +1512,7 @@ To use quotes inside a label, use HTML entity `&quot;`:
 
 ```mermaid
 flowchart LR
-    A["He said "hello""]
+    A["He said &quot;hello&quot;"]
 ```
 
 ---
@@ -1982,8 +1523,8 @@ Long text in nodes can make diagrams look cramped. Use `<br/>` to split lines:
 
 ```mermaid
 flowchart TD
-    A["Step 1:Initialize the databaseand check connection"]
-    B["Step 2:Run migrations"]
+    A["Step 1:<br/>Initialize the database<br/>and check connection"]
+    B["Step 2:<br/>Run migrations"]
     A --> B
 ```
 
@@ -2145,7 +1686,7 @@ gantt
     Milestone  :milestone, m1, 2024-01-15, 0d
 ```
 
-**Status:** `done`, `active`, `crit`
+**Status:** `done`, `active`, `crit`  
 **Duration:** `3d`, `2w`, `1M`, `after taskID`
 
 ---
@@ -2201,111 +1742,22 @@ node1:::myClass
 
 ### Critical Rules Summary
 
-|
- Rule 
-|
- Correct 
-|
- Wrong 
-|
-|
-------
-|
----------
-|
--------
-|
-|
- Backtick language tag 
-|
- ` ```mermaid 
-` | `
- ``` mermaid ` (space) 
-|
-|
- First line must be diagram type 
-|
-`flowchart LR`
-|
- Nothing on first line 
-|
-|
- Comments 
-|
-`%% comment`
-|
-`// comment`
- or 
-`# comment`
-|
-|
- State diagram version 
-|
-`stateDiagram-v2`
-|
-`stateDiagram`
-|
-|
- Node IDs 
-|
-`myNode`
- (no spaces) 
-|
-`my node`
- (spaces) 
-|
-|
- Labels with special chars 
-|
-`A["my (label)"]`
-|
-`A[my (label)]`
-|
-|
- Arrow with label 
-|
-`A -->|text| B`
-|
-`A --> text B`
-|
-|
- Mindmap hierarchy 
-|
- Indentation only 
-|
- Arrow syntax 
-|
-|
- Gantt task status keyword 
-|
- Before ID 
-|
- After ID 
-|
-|
- Pie chart labels 
-|
-`"Label" : value`
-|
-`Label : value`
-|
-|
- ERD entity names 
-|
-`MY_ENTITY`
-|
-`MY ENTITY`
- (space) 
-|
-|
- YML init block 
-|
- First line before type 
-|
- After diagram content 
-|
+| Rule | Correct | Wrong |
+|------|---------|-------|
+| Backtick language tag | ` ```mermaid ` | ` ``` mermaid ` (space) |
+| First line must be diagram type | `flowchart LR` | Nothing on first line |
+| Comments | `%% comment` | `// comment` or `# comment` |
+| State diagram version | `stateDiagram-v2` | `stateDiagram` |
+| Node IDs | `myNode` (no spaces) | `my node` (spaces) |
+| Labels with special chars | `A["my (label)"]` | `A[my (label)]` |
+| Arrow with label | `A -->|text| B` | `A --> text B` |
+| Mindmap hierarchy | Indentation only | Arrow syntax |
+| Gantt task status keyword | Before ID | After ID |
+| Pie chart labels | `"Label" : value` | `Label : value` |
+| ERD entity names | `MY_ENTITY` | `MY ENTITY` (space) |
+| Init block | First line before type | After diagram content |
 
 ---
 
-*End of The Complete Mermaid Diagrams Guide*
+*End of The Complete Mermaid Diagrams Guide*  
 *Live editor for testing: https://mermaid.live*
